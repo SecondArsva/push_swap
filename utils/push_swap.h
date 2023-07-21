@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 18:07:46 by davidga2          #+#    #+#             */
-/*   Updated: 2023/07/19 18:36:11 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/07/21 09:01:13 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 # define PUSH_SWAP_H
 
 typedef struct s_iters{
-	size_t	i;
-	size_t	j;
-	size_t	k;
-	size_t	l;
-	size_t	m;
+	int	i;
+	int	j;
+	int	k;
+	int	l;
+	int	m;
 }			t_iter;
 
 void	ft_pa(t_list **lst_a, t_list **lst_b);
