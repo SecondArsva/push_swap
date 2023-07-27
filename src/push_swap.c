@@ -6,21 +6,26 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 01:41:19 by davidga2          #+#    #+#             */
-/*   Updated: 2023/07/26 08:42:26 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/07/27 04:13:58 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../utils/push_swap.h"
-// usa macros para guardar el valor del max int y el min int
-/*
-int	ft_int_range(char *str)
+
+// HAZ UN PUTO ATOL.
+// además falta adaptar algo así para la función args_dup
+int	ft_int_range(const char *str)
 {
 	long	num;
 
-	num = ft_atol(str);
-	if (num < INT_MAX)
+	num = atol(str);
+	ft_printf("min int: %i\n", INTMIN);
+	ft_printf("max int: %i\n", INTMAX);
+	if (num < INTMIN || num > INTMAX)
+		return (ft_printf_error("[x] El número introducido se sale del rango de los int.\n"), 0);
+	return (1);
 }
-*/
+
 int	ft_check_args_dup(t_list *stack)
 {
 	t_list	*current;
@@ -32,6 +37,8 @@ int	ft_check_args_dup(t_list *stack)
 	ft_printf("0\n");
 	while (current->next)
 	{
+		if (*(int *)current->content < INTMIN || *(int *) current->content > INTMAX)
+			return (ft_printf_error("[x] Alguno de los valores introducidos se sale del rango de los int.\n"), 0);
 		ft_printf("current->content: %i | checked->content: %i\n", *(int *)current->content, *(int *)checked->content);
 		if (*(int *)current->content == *(int *)checked->content)
 			return (ft_printf_error("[x] No puede haber valores repetidos.\n"), 0);
@@ -115,7 +122,7 @@ int	ft_check_args_valid_chars(char **m)
 
 void	ft_leaks(void)
 {
-	system("leaks -q a.out");
+	system("leaks -q push_swap");
 }
 
 int	main(int argc, char *argv[])
@@ -132,17 +139,21 @@ int	main(int argc, char *argv[])
 	ft_printf("argc = %i\n", argc);
 	if (argc < 2)
 		return (ft_printf_error("[x] No se han introducido suficientes argumentos.\n"), 0);
-	if (argc == 2)
-	{
-		return (ft_printf("[v] No se puede ordenar nada si solo hay un número.\n"), 0);
-	}
+
 	while (i < argc)
 	{
 		ft_printf("argv[%i]: %s\n", i, argv[i]);
 		i++;
 	}
+
 	if (!ft_check_args_valid_chars(argv))
 			return (0);
+	if (argc == 2)
+	{
+		if (!ft_int_range(argv[1]))
+			return (0);
+		return (ft_printf("[v] No se puede ordenar nada si solo hay un número.\n"), 0);
+	}
 	if (!ft_stack_create(&stack_a, argc - 1, argv))
 		return (ft_lstclear(&stack_a, free), 0);
 	if (!ft_check_args_dup(stack_a))
