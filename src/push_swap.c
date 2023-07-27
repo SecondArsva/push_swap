@@ -6,19 +6,17 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 01:41:19 by davidga2          #+#    #+#             */
-/*   Updated: 2023/07/27 04:13:58 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/07/28 00:22:52 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../utils/push_swap.h"
 
-// HAZ UN PUTO ATOL.
-// además falta adaptar algo así para la función args_dup
 int	ft_int_range(const char *str)
 {
 	long	num;
 
-	num = atol(str);
+	num = ft_atol(str);
 	ft_printf("min int: %i\n", INTMIN);
 	ft_printf("max int: %i\n", INTMAX);
 	if (num < INTMIN || num > INTMAX)
@@ -37,7 +35,8 @@ int	ft_check_args_dup(t_list *stack)
 	ft_printf("0\n");
 	while (current->next)
 	{
-		if (*(int *)current->content < INTMIN || *(int *) current->content > INTMAX)
+		ft_printf("0000000000000000000000000000000000000000000000000000000\n");
+		if ((*(long *)current->content < INTMIN || *(long *) current->content > INTMAX) || (*(long *)checked->content < INTMIN || *(long *) checked->content > INTMAX))
 			return (ft_printf_error("[x] Alguno de los valores introducidos se sale del rango de los int.\n"), 0);
 		ft_printf("current->content: %i | checked->content: %i\n", *(int *)current->content, *(int *)checked->content);
 		if (*(int *)current->content == *(int *)checked->content)
@@ -59,7 +58,7 @@ int	ft_stack_create(t_list **stack, int nodes, char **argv)
 {
 	t_iter	i;
 	t_list	*tmp;
-	int		*num;
+	long	*num;
 
 	ft_printf("---ft_stack_create---\n");
 	i.i = 1;
@@ -71,18 +70,18 @@ int	ft_stack_create(t_list **stack, int nodes, char **argv)
 	while (i.i <= nodes)
 	{
 		ft_printf("[ft] argv[%i]: %s\n", i.i, argv[i.i]);
-		num = ft_calloc(1, sizeof(int));
+		num = ft_calloc(1, sizeof(long));
 		if (!num)
 			return (0);
 		ft_printf("[num] calloc:	%p\n", num);
-		*num = ft_atoi(argv[i.i]);
+		*num = ft_atol(argv[i.i]);
 		ft_printf("[num] value: %i\n", *num);
 		tmp->content = num;
-		ft_printf("content: %i\n", *(int *)tmp->content);
+		ft_printf("content: %i\n", *(long *)tmp->content);
 		tmp = tmp->next;
 		i.i++;
 	}
-	ft_lstprint_int(*stack, "stack_a");
+	ft_lstprint_long(*stack, "stack_a");
 	ft_printf("---ft_stack_create---\n");
 	return (1);
 }
@@ -152,12 +151,12 @@ int	main(int argc, char *argv[])
 	{
 		if (!ft_int_range(argv[1]))
 			return (0);
-		return (ft_printf("[v] No se puede ordenar nada si solo hay un número.\n"), 0);
+		return (ft_printf("[v] Al haber un solo número el stack ya está ordenado.\n"), 0);
 	}
 	if (!ft_stack_create(&stack_a, argc - 1, argv))
 		return (ft_lstclear(&stack_a, free), 0);
 	if (!ft_check_args_dup(stack_a))
 		return (ft_lstclear(&stack_a, free), 0);
-	ft_lstprint_int(stack_a, "stack_a");
+	ft_lstprint_long(stack_a, "stack_a");
 	return (ft_lstclear(&stack_a, free), 0);
 }

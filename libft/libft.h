@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 20:40:03 by davidga2          #+#    #+#             */
-/*   Updated: 2023/07/26 08:41:30 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/07/27 15:39:01 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <stdarg.h>
+# include <limits.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
@@ -102,7 +103,15 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+// Extra linked list functions
 void	ft_lstprint_str(t_list *lst, char *name);
 void	ft_lstprint_int(t_list *lst, char *name);
 t_list	*ft_lstcreate(size_t n);
+
+// Push_swap addons
+long	ft_atol(const char *str);
+void	ft_lstprint_long(t_list *lst, char *name);
+void	ft_putnbrlong_count(long n, int *ctr);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 12:55:00 by davidga2          #+#    #+#             */
-/*   Updated: 2023/06/08 23:40:16 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/07/27 13:30:35 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ static void	ft_format_type(const char *str, va_list args, int *ctr, size_t i)
 		ft_putnbr_base(va_arg(args, size_t), "0123456789abcdef", 1, ctr);
 	else if (str[i] == 'd' || str[i] == 'i')
 		ft_putnbr_count(va_arg(args, int), ctr);
+	else if (str[i] == 'l')
+		ft_putnbrlong_count(va_arg(args, long), ctr);
 	else if (str[i] == 'u')
 		ft_putnbr_base(va_arg(args, unsigned int), "0123456789", 0, ctr);
 	else if (str[i] == 'x')
