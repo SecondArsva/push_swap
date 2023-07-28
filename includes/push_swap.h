@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 18:07:46 by davidga2          #+#    #+#             */
-/*   Updated: 2023/07/26 08:51:37 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/07/28 18:35:36 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,10 @@ void	ft_pa(t_list **lst_a, t_list **lst_b);
 void	ft_pb(t_list **lst_b, t_list **lst_a);
 void	ft_rra(t_list **lst_a);
 int		main(int argc, char *argv[]);
+int		ft_check_args_valid_chars(char **m);
+int		ft_one_value(int argc, char **argv);
+int		ft_one_value_int_range(const char *str);
+int		ft_stack_create(t_list **stack, int nodes, char **argv);
+int		ft_check_args_int_range_and_dup(t_list *stack);
+int		ft_two_values(int argc, t_list **stack_a);
 #endif

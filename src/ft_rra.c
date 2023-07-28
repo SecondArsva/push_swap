@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 07:55:58 by davidga2          #+#    #+#             */
-/*   Updated: 2023/07/18 18:56:59 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/07/28 20:47:55 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	ft_rra(t_list **lst_a)
 	next_to_last_node->next = NULL;
 	last_node->next = *lst_a;
 	*lst_a = last_node;
+	ft_printf("rra\n");
 }
 /*
 int	main(void)

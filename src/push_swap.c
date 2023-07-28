@@ -6,13 +6,13 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 01:41:19 by davidga2          #+#    #+#             */
-/*   Updated: 2023/07/28 00:22:52 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/07/28 20:26:50 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+// ¿Hay que hacer una función que compruebe si los números están ordenados?
+#include "../includes/push_swap.h"
 
-#include "../utils/push_swap.h"
-
-int	ft_int_range(const char *str)
+int	ft_one_value_int_range(const char *str)
 {
 	long	num;
 
@@ -24,7 +24,7 @@ int	ft_int_range(const char *str)
 	return (1);
 }
 
-int	ft_check_args_dup(t_list *stack)
+int	ft_check_args_int_range_and_dup(t_list *stack)
 {
 	t_list	*current;
 	t_list	*checked;
@@ -96,6 +96,17 @@ int	ft_stack_create(t_list **stack, int nodes, char **argv)
 //	la lisla al no haber recibido correctamente los valores. Como lo de la
 //	liberación de la matriz del split cuando iba mal.
 
+int	ft_one_value(int argc, char **argv)
+{
+	if (argc == 2)
+	{
+		if (!ft_one_value_int_range(argv[1]))
+			return (1);
+		return (ft_printf("[v] Al haber un solo número el stack ya está ordenado.\n"), 1);
+	}
+	return (0);
+}
+
 int	ft_check_args_valid_chars(char **m)
 {
 	t_iter i;
@@ -147,16 +158,15 @@ int	main(int argc, char *argv[])
 
 	if (!ft_check_args_valid_chars(argv))
 			return (0);
-	if (argc == 2)
-	{
-		if (!ft_int_range(argv[1]))
-			return (0);
-		return (ft_printf("[v] Al haber un solo número el stack ya está ordenado.\n"), 0);
-	}
+	if (ft_one_value(argc, argv))
+		return (0);
 	if (!ft_stack_create(&stack_a, argc - 1, argv))
 		return (ft_lstclear(&stack_a, free), 0);
-	if (!ft_check_args_dup(stack_a))
+	if (!ft_check_args_int_range_and_dup(stack_a))
 		return (ft_lstclear(&stack_a, free), 0);
+	if (ft_two_values(argc, &stack_a))
+		return (ft_lstprint_long(stack_a, "[v] two values - stack_a"), ft_lstclear(&stack_a, free), 0);
+	ft_printf("\n\n\n\n");
 	ft_lstprint_long(stack_a, "stack_a");
 	return (ft_lstclear(&stack_a, free), 0);
 }
