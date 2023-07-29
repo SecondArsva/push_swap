@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 14:12:59 by davidga2          #+#    #+#             */
-/*   Updated: 2023/07/29 06:12:07 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/07/29 20:38:26 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,15 @@ int	ft_three_values(int argc, t_list **stack_a)
 		if (c.n0 < c.n1 && c.n1 < c.n2 && c.n2 > c.n0)
 			return (1);
 		else if (c.n0 < c.n1 && c.n1 > c.n2 && c.n2 > c.n0)
-			return (ft_rra(stack_a), ft_swap(stack_a), 1);
+			return (ft_rra(stack_a), ft_sa(stack_a), 1);
 		else if (c.n0 > c.n1 && c.n1 < c.n2 && c.n2 > c.n0)
-			return (ft_swap(stack_a), 1);
+			return (ft_sa(stack_a), 1);
 		else if (c.n0 < c.n1 && c.n1 > c.n2 && c.n2 < c.n0)
 			return (ft_rra(stack_a), 1);
 		else if (c.n0 > c.n1 && c.n1 < c.n2 && c.n2 < c.n0)
 			return (ft_rra(stack_a), ft_rra(stack_a), 1);
 		else if (c.n0 > c.n1 && c.n1 > c.n2 && c.n2 < c.n0)
-			return (ft_swap(stack_a), ft_rra(stack_a), 1);
+			return (ft_sa(stack_a), ft_rra(stack_a), 1);
 	}
 	return (0);
 }

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_sa.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 23:09:54 by davidga2          #+#    #+#             */
-/*   Updated: 2023/07/29 06:19:16 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/07/29 20:36:35 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 
-void	ft_swap(t_list **lst)
+void	ft_sa(t_list **lst)
 {
 	t_list	*tmp;
 
@@ -25,6 +25,7 @@ void	ft_swap(t_list **lst)
 	(*lst)->next = tmp->next;
 	tmp->next = *lst;
 	*lst = tmp;
+	ft_printf("sa\n");
 }
 /*
 int	main(void)

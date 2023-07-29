@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 18:26:09 by davidga2          #+#    #+#             */
-/*   Updated: 2023/07/18 05:27:47 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/07/29 20:32:03 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_pa(t_list **lst_a, t_list **lst_b)
 		*lst_b = (*lst_b)->next;
 	tmp->next = *lst_a;
 	*lst_a = tmp;
+	ft_printf("pa\n");
 }
 /*
 int	main(void)
