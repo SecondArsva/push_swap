@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 18:07:46 by davidga2          #+#    #+#             */
-/*   Updated: 2023/07/29 20:37:04 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/07/30 12:02:12 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	ft_pa(t_list **lst_a, t_list **lst_b);
 void	ft_pb(t_list **lst_b, t_list **lst_a);
 void	ft_rra(t_list **lst_a);
 void	ft_sa(t_list **lst);
+void	ft_ra(t_list **stack_a);
 int		main(int argc, char *argv[]);
 int		ft_check_args_valid_chars(char **m);
 int		ft_one_value(int argc, char **argv);
@@ -44,4 +45,8 @@ int		ft_stack_create(t_list **stack, int nodes, char **argv);
 int		ft_check_args_int_range_and_dup(t_list *stack);
 int		ft_two_values(int argc, t_list **stack_a);
 int		ft_three_values(int argc, t_list **stack_a);
+int		ft_four_values(int argc, t_list **stack_a, t_list **stack_b);
+int		ft_find_min_val_pos(t_list *lst);
+int		ft_ordered(t_list *lst);
+int		ft_five_values(int argc, t_list **stack_a, t_list **stack_b);
 #endif

@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 01:41:19 by davidga2          #+#    #+#             */
-/*   Updated: 2023/07/29 03:41:09 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/07/30 12:01:39 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 // ¿Hay que hacer una función que compruebe si los números están ordenados?
@@ -164,10 +164,16 @@ int	main(int argc, char *argv[])
 		return (ft_lstclear(&stack_a, free), 0);
 	if (!ft_check_args_int_range_and_dup(stack_a))
 		return (ft_lstclear(&stack_a, free), 0);
+	if (ft_ordered(stack_a))
+		return (ft_lstclear(&stack_a, free), 0);
 	if (ft_two_values(argc, &stack_a))
 		return (ft_lstprint_long(stack_a, "[v] 2 values - stack_a"), ft_lstclear(&stack_a, free), 0);
 	if (ft_three_values(argc, &stack_a))
 		return (ft_lstprint_long(stack_a, "[v] 3 values - stack_a"), ft_lstclear(&stack_a, free), 0);
+	if (ft_four_values(argc, &stack_a, &stack_b))
+		return (ft_lstprint_long(stack_a, "[v] 4 values - stack_a"), ft_lstclear(&stack_a, free), 0);
+	if (ft_five_values(argc, &stack_a, &stack_b))
+		return (ft_lstprint_long(stack_a, "[v] 5 values - stack_a"), ft_lstclear(&stack_a, free), 0);
 	ft_printf("\n\n\n\n");
 	ft_lstprint_long(stack_a, "stack_a");
 	return (ft_lstclear(&stack_a, free), 0);

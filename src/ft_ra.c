@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sa.c                                            :+:      :+:    :+:   */
+/*   ft_ra.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/28 23:09:54 by davidga2          #+#    #+#             */
-/*   Updated: 2023/07/30 11:18:58 by davidga2         ###   ########.fr       */
+/*   Created: 2023/07/30 09:02:33 by davidga2          #+#    #+#             */
+/*   Updated: 2023/07/30 11:18:35 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 
-void	ft_sa(t_list **lst)
+void	ft_ra(t_list **stack_a)
 {
-	t_list	*tmp;
+	t_list	*tmp;;
+	t_list	*new_head;
+	t_list	*last_node;
 
 	tmp = NULL;
-	if (!*lst || !(*lst)->next)
+	new_head = NULL;
+	last_node = NULL;
+	if (!stack_a || !*stack_a || !(*stack_a)->next)
 		return ;
-	tmp = (*lst)->next;
-	if (!tmp->next)
-		(*lst)->next = NULL;
-	(*lst)->next = tmp->next;
-	tmp->next = *lst;
-	*lst = tmp;
-	ft_printf("sa\n");
+	tmp = *stack_a;
+	new_head = (*stack_a)->next;
+	last_node = ft_lstlast(*stack_a);
+	last_node->next = tmp;
+	tmp->next = NULL;
+	*stack_a = new_head;
+	ft_printf("ra\n");
 }
 /*
 int	main(void)
 {
-	int	switch_bool = 0;
+	int	switch_bool = 1;
 
 	t_list	*a = ft_lstnew(ft_strdup("UNO"));
 	ft_lstprint_str(a, "a simple:");
@@ -44,7 +48,7 @@ int	main(void)
 	ft_printf("\n");
 	ft_lstprint_str(a, "Complete list:");
 	ft_printf("\n");
-	ft_sa(&a);
+	ft_ra(&a);
 	ft_lstprint_str(a, "Complete list:");
 	return (0);
 }*/
