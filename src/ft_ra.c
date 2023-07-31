@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 09:02:33 by davidga2          #+#    #+#             */
-/*   Updated: 2023/07/30 11:18:35 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/07/31 02:03:16 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_ra(t_list **stack_a)
 {
-	t_list	*tmp;;
+	t_list	*tmp;
 	t_list	*new_head;
 	t_list	*last_node;
 

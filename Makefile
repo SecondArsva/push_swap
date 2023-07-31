@@ -6,21 +6,21 @@
 #    By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/26 20:44:16 by davidga2          #+#    #+#              #
-#    Updated: 2023/07/30 12:04:30 by davidga2         ###   ########.fr        #
+#    Updated: 2023/07/31 02:20:09 by davidga2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC = src/push_swap.c	\
-	  src/few_values.c	\
-	  src/ft_rra.c		\
-	  src/ft_sa.c		\
-	  src/ft_pa.c		\
-	  src/ft_pb.c		\
-	  src/ft_ra.c		\
-	  src/ft_ordered.c 	\
-	  src/five_values.c
+SRC = src/push_swap.c		\
+	  src/ft_rra.c			\
+	  src/ft_sa.c			\
+	  src/ft_pa.c			\
+	  src/ft_pb.c			\
+	  src/ft_ra.c			\
+	  src/ft_ordered.c	 	\
+	  src/few_values.c		\
+	  src/ft_five_values.c
 
 OBJS = $(SRC:%.c=%.o)
 

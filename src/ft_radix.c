@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ordered.c                                       :+:      :+:    :+:   */
+/*   ft_radix.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/30 03:46:16 by davidga2          #+#    #+#             */
-/*   Updated: 2023/07/31 02:04:40 by davidga2         ###   ########.fr       */
+/*   Created: 2023/07/31 04:19:48 by davidga2          #+#    #+#             */
+/*   Updated: 2023/07/31 06:10:36 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_ordered(t_list *lst)
+void	ft_radix(t_list **stack_a, t_list **stack_b)
 {
-	while (lst->next)
-	{
-		if (*(long *)lst->content > *(long *)lst->next->content)
-			return (0);
-		lst = lst->next;
-	}
-	return (ft_printf("[ord] Los valores están ordenados\n"), 1);
+
 }
