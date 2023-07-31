@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 18:07:46 by davidga2          #+#    #+#             */
-/*   Updated: 2023/07/30 12:02:12 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/07/31 12:26:11 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,5 @@ int		ft_four_values(int argc, t_list **stack_a, t_list **stack_b);
 int		ft_find_min_val_pos(t_list *lst);
 int		ft_ordered(t_list *lst);
 int		ft_five_values(int argc, t_list **stack_a, t_list **stack_b);
+void	ft_radix(int argc, t_list **stack_a, t_list **stack_b);
 #endif

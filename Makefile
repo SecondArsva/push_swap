@@ -6,7 +6,7 @@
 #    By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/26 20:44:16 by davidga2          #+#    #+#              #
-#    Updated: 2023/07/31 02:20:09 by davidga2         ###   ########.fr        #
+#    Updated: 2023/07/31 12:11:44 by davidga2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRC = src/push_swap.c		\
 	  src/ft_ra.c			\
 	  src/ft_ordered.c	 	\
 	  src/few_values.c		\
-	  src/ft_five_values.c
+	  src/ft_five_values.c	\
+	  src/ft_radix.c
 
 OBJS = $(SRC:%.c=%.o)
 
