@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 04:19:48 by davidga2          #+#    #+#             */
-/*   Updated: 2023/07/31 17:37:05 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/07/31 17:58:41 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	ft_max_val_binary_digits(t_list *lst)
 		ft_printf("HOLA\n");
 		max_val = max_val >> 1;
 		total_digits++;
-		sleep(2);
 	}
 	ft_printf("iBEY total_digits: %i\n", total_digits);
 	sleep(2);
@@ -53,10 +52,10 @@ void	ft_radix(int argc, t_list **stack_a, t_list **stack_b)
 	while (!ft_ordered(*stack_a))
 	{
 		ft_printf("i: %i | j: %i | n_comp:%i\n", i.i, i.j, n_comp);
-		while (i.j < n_comp)
+		while (i.j < n_comp && !ft_ordered(*stack_a))
 		{
 			ft_printf("i.j value: %i\n", i.j);
-			while (i.i < (argc - 1))
+			while (i.i < (argc - 1) && !ft_ordered(*stack_a))
 			{
 				ft_printf("i.i value: %i\n", i.i);
 				if (((*(long *)(*stack_a)->content >> i.j) & 1))
