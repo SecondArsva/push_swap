@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 09:36:42 by davidga2          #+#    #+#             */
-/*   Updated: 2023/08/02 20:15:01 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/08/02 22:18:59 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,20 +62,29 @@ int	ft_value_substitution(int argc, t_list **stack_a)
 	while (i.i < argc -1)
 	{
 		ft_printf("i.i: %i| i.li: %i\n", i.i, i.li);
-		min_val_pos = ft_find_min_val_pos_val_subs(stack_a);;
+		min_val_pos = ft_find_min_val_pos_val_subs(stack_a);
 		arr[min_val_pos] = i.li;
 		i.li++;
 		i.i++;
 	}
 	i.i = 0;
+	ft_printf("[0]: %i\n", arr[0]);
+	ft_printf("[1]: %i\n", arr[1]);
+	ft_printf("[2]: %i\n", arr[2]);
+	ft_printf("[3]: %i\n", arr[3]);
+	ft_printf("[4]: %i\n", arr[4]);
+	ft_printf("[5]: %i\n", arr[5]);
+	sleep(2);
+
 	while ((*stack_a)->next)
 	{
 		sleep(1);
 		//ft_lstprint_long(*stack_a, "[subs] stack_a");
 		ft_printf("00\n");
-		free((*stack_a)->content);
 		ft_lstprint_long(*stack_a, "[subs] stack_a");
-		(*stack_a)->content = &arr[i.i];
+		long *l = malloc(sizeof(long) * 1);
+		*l = arr[i.i];
+		(*stack_a)->content = l;
 		ft_printf("11\n");
 		*stack_a = (*stack_a)->next;
 		ft_printf("22\n");
