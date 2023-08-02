@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 01:41:19 by davidga2          #+#    #+#             */
-/*   Updated: 2023/07/31 12:34:21 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/08/02 16:38:56 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 // ¿Hay que hacer una función que compruebe si los números están ordenados?
@@ -174,6 +174,9 @@ int	main(int argc, char *argv[])
 		return (ft_lstprint_long(stack_a, "[v] 4 values - stack_a"), ft_lstclear(&stack_a, free), 0);
 	if (ft_five_values(argc, &stack_a, &stack_b))
 		return (ft_lstprint_long(stack_a, "[v] 5 values - stack_a"), ft_lstclear(&stack_a, free), 0);
+	if (!ft_value_substitution(argc, &stack_a))
+		return (ft_lstprint_long(stack_a, "[x] val_sub_error - stack_a"), ft_lstclear(&stack_a, free), 0);
+	ft_lstprint_long(stack_a, "[VALUE SUBS] stack_a");
 	ft_radix(argc, &stack_a, &stack_b);
 	ft_printf("\n\n\n\n");
 	ft_lstprint_long(stack_a, "stack_a");
