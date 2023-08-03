@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 01:41:19 by davidga2          #+#    #+#             */
-/*   Updated: 2023/08/02 16:38:56 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/08/03 04:31:05 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 // ¿Hay que hacer una función que compruebe si los números están ordenados?

@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 09:36:42 by davidga2          #+#    #+#             */
-/*   Updated: 2023/08/02 22:18:59 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/08/03 04:31:01 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_find_min_val_pos_val_subs(t_list **stack_a)
 // This function modify the real values for relative values to optimize the
 // sorting with radix. Navega toda la lista de forma similar al que busca si
 // números repetidos modificando los valores del menor al mayor.
-int	ft_value_substitution(int argc, t_list **stack_a)
+/*int	ft_value_substitution(int argc, t_list **stack_a)
 {
 	t_iter	i;
 	int		min_val_pos;
@@ -68,12 +68,12 @@ int	ft_value_substitution(int argc, t_list **stack_a)
 		i.i++;
 	}
 	i.i = 0;
-	ft_printf("[0]: %i\n", arr[0]);
-	ft_printf("[1]: %i\n", arr[1]);
-	ft_printf("[2]: %i\n", arr[2]);
-	ft_printf("[3]: %i\n", arr[3]);
-	ft_printf("[4]: %i\n", arr[4]);
-	ft_printf("[5]: %i\n", arr[5]);
+	ft_printf("[0]: %i, ptr: %p\n", arr[0], arr[0]);
+	ft_printf("[1]: %i, ptr: %p\n", arr[1], arr[0]);
+	ft_printf("[2]: %i, ptr: %p\n", arr[2], arr[0]);
+	ft_printf("[3]: %i, ptr: %p\n", arr[3], arr[0]);
+	ft_printf("[4]: %i, ptr: %p\n", arr[4], arr[0]);
+	ft_printf("[5]: %i, ptr: %p\n", arr[5], arr[0]);
 	sleep(2);
 
 	while ((*stack_a)->next)
@@ -81,10 +81,8 @@ int	ft_value_substitution(int argc, t_list **stack_a)
 		sleep(1);
 		//ft_lstprint_long(*stack_a, "[subs] stack_a");
 		ft_printf("00\n");
-		ft_lstprint_long(*stack_a, "[subs] stack_a");
-		long *l = malloc(sizeof(long) * 1);
-		*l = arr[i.i];
-		(*stack_a)->content = l;
+		ft_lstprint_long(*stack_a, "[subs] stack_a");	
+		(*stack_a)->content = &arr[i.i];
 		ft_printf("11\n");
 		*stack_a = (*stack_a)->next;
 		ft_printf("22\n");
@@ -92,4 +90,51 @@ int	ft_value_substitution(int argc, t_list **stack_a)
 	}
 	sleep(5);
 	return (1);
+}*/
+
+
+int	ft_value_substitution(int argc, t_list **stack_a)
+{
+	t_iter	i;
+	int		min_val_pos;
+	long	*arr;
+	t_list	*puta;
+
+	puta = *stack_a;
+	i.i = 0;
+	i.li = 0;
+	arr = ft_calloc(argc - 1, sizeof(long));
+	if (!arr)
+		return (0);
+	ft_printf("puta pointer, este si: %i\n", sizeof(long *));
+	while (i.i < argc -1)
+	{
+		ft_printf("i.i: %i| i.li: %i\n", i.i, i.li);
+		min_val_pos = ft_find_min_val_pos_val_subs(stack_a);
+		arr[min_val_pos] = i.li;
+		i.li++;
+		i.i++;
+	}
+	i.i = 0;
+	ft_printf("[0]: %i, ptr: %p\n", arr[0], arr[0]);
+	ft_printf("[1]: %i, ptr: %p\n", arr[1], arr[1]);
+	ft_printf("[2]: %i, ptr: %p\n", arr[2], arr[2]);
+	ft_printf("[3]: %i, ptr: %p\n", arr[3], arr[3]);
+	ft_printf("[4]: %i, ptr: %p\n", arr[4], arr[4]);
+	ft_printf("[5]: %i, ptr: %p\n", arr[5], arr[5]);
+//	sleep(1);
+
+	while (puta)
+	{
+		//ft_lstprint_long(*stack_a, "[subs] stack_a");
+		ft_printf("00\n");
+		ft_lstprint_long(puta, "[subs] puta");
+		*(long *)puta->content = arr[i.i];
+		ft_printf("11\n");
+		puta = puta->next;
+		ft_printf("22\n");
+		i.i++;
+	}
+	//sleep(3);
+	return (free(arr), 1);
 }
