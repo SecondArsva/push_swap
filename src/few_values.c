@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 14:12:59 by davidga2          #+#    #+#             */
-/*   Updated: 2023/07/30 04:26:25 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/08/03 22:06:19 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	ft_find_min_val_pos(t_list *lst)
 	while (tmp)
 	{
 		if (*(long *)tmp->content == min_val)
-			return (ft_printf("[fmvp] Node position: %i\n"), node_pos);
+			return (node_pos);
 		node_pos++;
 		tmp = tmp->next;
 	}

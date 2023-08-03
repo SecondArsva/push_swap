@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 03:46:16 by davidga2          #+#    #+#             */
-/*   Updated: 2023/07/31 02:04:40 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/08/03 22:05:09 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ int	ft_ordered(t_list *lst)
 			return (0);
 		lst = lst->next;
 	}
-	return (ft_printf("[ord] Los valores están ordenados\n"), 1);
+	return (1);
 }
