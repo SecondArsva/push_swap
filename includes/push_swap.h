@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 18:07:46 by davidga2          #+#    #+#             */
-/*   Updated: 2023/08/02 16:11:07 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/08/03 15:07:27 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,5 @@ int		ft_ordered(t_list *lst);
 int		ft_five_values(int argc, t_list **stack_a, t_list **stack_b);
 void	ft_radix(int argc, t_list **stack_a, t_list **stack_b);
 int		ft_value_substitution(int argc, t_list **stack_a);
+void	ft_think_in_positive(t_list **stack_a);
 #endif
