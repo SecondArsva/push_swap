@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 01:41:19 by davidga2          #+#    #+#             */
-/*   Updated: 2023/08/03 22:14:45 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/08/04 00:37:13 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_sort(int argc, t_list **stack_a, t_list **stack_b)
 int	ft_args_validation(int argc, char **argv, t_list **stack_a)
 {
 	if (argc < 2)
-		return (ft_printf_error("Error\n"), 0);
+		return (0);
 	if (!ft_check_args_valid_chars(argv))
 		return (0);
 	if (ft_one_value(argc, argv))
