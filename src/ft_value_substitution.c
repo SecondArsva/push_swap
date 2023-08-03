@@ -6,7 +6,7 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 09:36:42 by davidga2          #+#    #+#             */
-/*   Updated: 2023/08/03 15:50:11 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/08/03 18:04:01 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ int	ft_find_min_val_pos_val_subs(t_list **stack_a)
 	int		node_pos;
 	t_list	*tmp;
 
-	min_val = *(long *)(*stack_a)->content;
+	min_val = LONG_MAX;
 	node_pos = 0;
 	tmp = *stack_a;
 	while (tmp)
 	{
-		if (*(long *)tmp->content < min_val && *(long *)tmp->content >= INT_MIN)
+		if (*(long *)tmp->content <= min_val && *(long *)tmp->content >= INT_MIN)
 			min_val = *(long *)tmp->content;
 		tmp = tmp->next;
 	}
