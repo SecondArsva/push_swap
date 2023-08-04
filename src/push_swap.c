@@ -6,18 +6,12 @@
 /*   By: davidga2 <davidga2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 01:41:19 by davidga2          #+#    #+#             */
-/*   Updated: 2023/08/04 00:37:13 by davidga2         ###   ########.fr       */
+/*   Updated: 2023/08/04 01:06:24 by davidga2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-/*
-void	ft_leaks(void)
-{
-	system("leaks -q push_swap");
-}
-*/
 int	ft_sort(int argc, t_list **stack_a, t_list **stack_b)
 {
 	if (ft_two_values(argc, stack_a))
@@ -56,7 +50,6 @@ int	main(int argc, char *argv[])
 	t_list	*stack_a;
 	t_list	*stack_b;
 
-	//atexit(ft_leaks);
 	stack_a = NULL;
 	stack_b = NULL;
 	if (!ft_args_validation(argc, argv, &stack_a))
